@@ -1,0 +1,12 @@
+programme tableau c'est
+constante entier TAILLE := 100;
+
+procédure init(sortF tab : tableau[] de entier) c'est
+début
+    ...
+fin
+
+début 
+    tab : tableau[TAILLE] de entier;
+    init(sortE tab);
+fin

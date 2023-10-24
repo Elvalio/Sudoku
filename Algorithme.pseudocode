@@ -1,0 +1,19 @@
+// Déclaration des constantes 
+
+constante caractere COLONNE_MIN := 'A';
+constante caractere COLONNE_MAX := 'I';
+constante entier RANGEE
+
+
+
+
+programme Sudoku c'est
+début
+    afficherBienvenue();
+    afficherRegles();
+    tant que (jeuEnCours) faire
+        afficherGrille();
+        demandePlacement();
+    finfaire
+fin
+
