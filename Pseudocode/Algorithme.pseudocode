@@ -7,6 +7,7 @@ constante entier RANGEE_MIN := 1;
 constante entier RANGEE_MAX := 9;
 constante entier CHAR_RANGEE := 25;
 constante entier TAILLE_SAISIE := 2;
+constante chaîne EMPLACEMENT_VIDEO := '.';
 
 programme Sudoku c'est
 début
@@ -20,7 +21,7 @@ fin
 
 procédure afficherBienvenue() c'est
 début
-    écrireEcran();("Texte de bienvenue")
+    écrireEcran("Texte de bienvenue");
 fin
 
 procédure afficherRegles() c'est
@@ -28,12 +29,13 @@ début
     écrireEcran("Contenu des règles");
 fin
 
-procédure entreeSaisie(sortF nom :tableau[] de entier ;) c'est
+fonction entreeSaisie(sortF tableauSaisiePosition :tableau[2] de entier ;) délivre tableau c'est
 début
     
+    tableauSaisiePosition : tableau[2] de entier;
     entreeSaisieColonne();
     entreeSaisieRangee();
-
+    retourne tableauSaisiePosition
 fin
 
 fonction entreeSaisieColonne() délivre caratère c'est
@@ -48,13 +50,17 @@ début
     retourne nom_variable
 fin
     
-fonction creerTableauVide() délivre type c'est
+fonction creerTableauVide(sortF tableauSaisiePosition :tableau[2] de entier ;) délivre tableau c'est
 début
     
-    
 
 
-    retourne nom_variable
+
+    tableauVide : tableau[] de entier;
+    entreeSaisieColonne();
+    entreeSaisieRangee();
+    retourne tableauVide
+
 fin
 
 
@@ -63,4 +69,3 @@ fin
 fin
 //comentaire test
 //commentaire test 2
-
