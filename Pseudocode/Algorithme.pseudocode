@@ -1,11 +1,11 @@
 // Déclaration des constantes 
 
-constante caractere COLONNE_MIN := 'A';
-constante caractere COLONNE_MAX := 'I';
-constante entier RANGEE
-
-
-
+constante chaine COLONNE_MIN := 'A';
+constante chaine COLONNE_MAX := 'I';
+constante entier RANGEE_MIN := 1;
+constante entier RANGEE_MAX := 9;
+constante entier TAILLE_SAISIE := 2;
+constante chaîne 
 
 programme Sudoku c'est
 début
@@ -13,10 +13,53 @@ début
     afficherRegles();
     tant que (jeuEnCours) faire
         afficherGrille();
-        demandePlacement();
+        entreeSaisie();
     finfaire
 fin
 
+procédure afficherBienvenue() c'est
+début
+    écrireEcran();("Texte de bienvenue")
+fin
+
+procédure afficherRegles() c'est
+début
+    écrireEcran("Contenu des règles");
+fin
+
+procédure entreeSaisie(sortF nom :tableau[] de entier ;) c'est
+début
+    
+    entreeSaisieColonne();
+    entreeSaisieRangee();
+
+fin
+
+fonction entreeSaisieColonne() délivre caratère c'est
+début
+    
+    retourne nom_variable
+fin
+
+fonction entreeSaisieRangee() délivre entier c'est
+début
+    
+    retourne nom_variable
+fin
+    
+fonction creerTableauVide() délivre type c'est
+début
+    
+    
+
+
+    retourne nom_variable
+fin
+
+
+
+
+fin
 //comentaire test
 //commentaire test 2
 
