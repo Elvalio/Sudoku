@@ -2,10 +2,11 @@
 
 constante chaine COLONNE_MIN := 'A';
 constante chaine COLONNE_MAX := 'I';
+constante chaine CHAR_COLONNE := 12;
 constante entier RANGEE_MIN := 1;
 constante entier RANGEE_MAX := 9;
+constante entier CHAR_RANGEE := 25;
 constante entier TAILLE_SAISIE := 2;
-constante chaîne 
 
 programme Sudoku c'est
 début
