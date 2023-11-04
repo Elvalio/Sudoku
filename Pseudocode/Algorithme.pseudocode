@@ -11,8 +11,10 @@ constante chaîne EMPLACEMENT_VIDEO := '.';
 
 programme Sudoku c'est
 début
+    booléen jeuEnCours;
     afficherBienvenue();
     afficherRegles();
+    jeuEnCours := vrai;
     tant que (jeuEnCours) faire
         afficherGrille();
         entreeSaisie();
