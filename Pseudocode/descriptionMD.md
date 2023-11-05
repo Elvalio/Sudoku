@@ -1,3 +1,70 @@
+Algorithme
+===
+
+```
+
+// Fonction principale 
+
+programme Sudoku c'est
+
+
+// Procédures
+procédure afficherRegles();
+procédure afficherGrille(entE tableauGrille : tableau[] de entier );
+procédure bloquerGrille(entE tableauGrille : tableau[] de entier );
+procédure entreeSaisie(entE listeEmplacementBloque : tableau[] de entier , sortE emplacementUtil : tableau[] de entier , sortE chiffreUser : entier );
+procédure modifieGrille(entE emplacementUtil : tableau[] de entier , entE chiffreUser : entier , entE/sortE tableauGrille : tableau[] de entier);
+procédure verifierGrille(entE tableauGrille : tableau[] de entier);
+procédure afficherComptage(entE compteur : entier);
+
+
+// Fonctions
+fonction creerGrille(entE fichierGrille) délivre tableau[] de entier ;
+fonction bloquerGrille(entE tableauGrille : tableau[] de entier) délivre tableau[] de entier ;
+
+
+// Déclaration des constantes 
+
+constante chaine COLONNE_MIN := 'A';
+constante chaine COLONNE_MAX := 'I';
+constante chaine CHAR_COLONNE := 12;
+constante entier RANGEE_MIN := 1;
+constante entier RANGEE_MAX := 9;
+constante entier CHAR_RANGEE := 25;
+constante entier TAILLE_SAISIE := 2;
+constante chaîne EMPLACEMENT_VIDE := '.';
+constante entier REPRE_EMPLACEMENT_VIDE := -1;
+constante entier NBR_ELEMENT := 81;
+
+début
+    // Déclaration variables
+    jeuEnCours : booléen ;
+    emplacementUtil : tableau[TAILLE_SAISIE] de entier ;
+    chiffreUser : entier ;
+    tableauGrille : tableau[RANGEE_MAX] de entier;
+    listeEmplacementBloque : tableau[NBR_ELEMENT] de entier;
+    entier compteur := 0 ;
+
+    // Initialisation variables
+    jeuEnCours := vrai;
+    tableauGrille := creerGrille(entE fichierGrille);
+    listeEmplacementBloque := bloquerGrille(entE tableauGrille);
+
+    afficherRegles();
+
+    tant que (jeuEnCours) faire
+        afficherGrille(entE tableauGrille);
+        entreeSaisie(entE listeEmplacementBloque , sortE emplacementUtil , sortE chiffreUser);
+        modifieGrille(entE emplacementUtil , entE chiffreUser , entE/sortE tableauGrille);
+        jeuEnCours := verifierGrille(entE tableauGrille);
+        compteur = compteur + 1 ;
+    finfaire
+
+    afficherComptage(entE compteur);
+
+fin
+```
+---
 Listage Procédure/Fonctions
 ===
 
@@ -112,71 +179,4 @@ Permet d'afficher le nombre de coups utilisés pour remplir la table de Sudoku.
 **Paramètres:**
 
 - `compteur` (Entrée) : entier, incrémenté à chaque tour, donnant à la fin le nombre de coups.
-
 ---
-Algorithme
-===
-
-```
-
-// Fonction principale 
-
-programme Sudoku c'est
-
-
-// Procédures
-procédure afficherRegles();
-procédure afficherGrille(entE tableauGrille : tableau[] de entier );
-procédure bloquerGrille(entE tableauGrille : tableau[] de entier );
-procédure entreeSaisie(entE listeEmplacementBloque : tableau[] de entier , sortE emplacementUtil : tableau[] de entier , sortE chiffreUser : entier );
-procédure modifieGrille(entE emplacementUtil : tableau[] de entier , entE chiffreUser : entier , entE/sortE tableauGrille : tableau[] de entier);
-procédure verifierGrille(entE tableauGrille : tableau[] de entier);
-procédure afficherComptage(entE compteur : entier);
-
-
-// Fonctions
-fonction creerGrille(entE fichierGrille) délivre tableau[] de entier ;
-fonction bloquerGrille(entE tableauGrille : tableau[] de entier) délivre tableau[] de entier ;
-
-
-// Déclaration des constantes 
-
-constante chaine COLONNE_MIN := 'A';
-constante chaine COLONNE_MAX := 'I';
-constante chaine CHAR_COLONNE := 12;
-constante entier RANGEE_MIN := 1;
-constante entier RANGEE_MAX := 9;
-constante entier CHAR_RANGEE := 25;
-constante entier TAILLE_SAISIE := 2;
-constante chaîne EMPLACEMENT_VIDE := '.';
-constante entier REPRE_EMPLACEMENT_VIDE := -1;
-constante entier NBR_ELEMENT := 81;
-
-début
-    // Déclaration variables
-    jeuEnCours : booléen ;
-    emplacementUtil : tableau[TAILLE_SAISIE] de entier ;
-    chiffreUser : entier ;
-    tableauGrille : tableau[RANGEE_MAX] de entier;
-    listeEmplacementBloque : tableau[NBR_ELEMENT] de entier;
-    entier compteur := 0 ;
-
-    // Initialisation variables
-    jeuEnCours := vrai;
-    tableauGrille := creerGrille(entE fichierGrille);
-    listeEmplacementBloque := bloquerGrille(entE tableauGrille);
-
-    afficherRegles();
-
-    tant que (jeuEnCours) faire
-        afficherGrille(entE tableauGrille);
-        entreeSaisie(entE listeEmplacementBloque , sortE emplacementUtil , sortE chiffreUser);
-        modifieGrille(entE emplacementUtil , entE chiffreUser , entE/sortE tableauGrille);
-        jeuEnCours := verifierGrille(entE tableauGrille);
-        compteur = compteur + 1 ;
-    finfaire
-
-    afficherComptage(entE compteur);
-
-fin
-```
