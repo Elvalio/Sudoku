@@ -23,7 +23,7 @@ fonction bloquerGrille
 Créée une liste contenant les emplacement, sous forme de sous liste ((a,b)(c,d)), des chiffres déjà présent afin de ne pas modifier la liste de base.
 
 paramètres
-tableauGrille (Entrée) : liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
+tableauGrille (Entrée) : tableau , liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
 
 résultat
 tableau d'entier
@@ -35,7 +35,7 @@ Affiche de manière plus lisibles , avec les chiffres pour rangée et lettres po
 Les emplacement vide (ou -1) seront représentés par des '.' .
 
 paramètres
-tableauGrille (Entrée) : liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
+tableauGrille (Entrée) : tableau , liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
 
 ----------------------------------------------------------------
 
@@ -47,4 +47,17 @@ Fais les vérifications nécessaires comme :
     - Si l'emplacement est hors de la limite de la grille
     - Si la saisie est correcte (entre 1 et 9)
 
+paramètres 
+emplacementUtil (Sortie) : tableau , liste contenant l'emplacement que l'utilisateur veux modifier.
+chiffreUser (Sortie) : entier , chiffre que l'utilisateur veux insérer.
 
+----------------------------------------------------------------
+
+fonction modifieGrille
+Prend le tableau actuel et le modifie avec la demande de l'utilisateur
+
+paramètres
+tableauGrille (Entrée) : tableau , liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
+
+retourne
+tableauGrille (Entrée) : tableau , la liste donnée en paramètress mais modifiée.

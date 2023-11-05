@@ -33,12 +33,9 @@ début
     jeuEnCours := vrai;
     tant que (jeuEnCours) faire
         afficherGrille(entE tableauGrille);
-        entreeSaisie(sortE );
+        entreeSaisie(sortE emplacementUtil , sortE chiffreUser);
         modifieGrille(entE/sortE tableauGrille)
     finfaire
 fin
 
 
-
-//comentaire test
-//commentaire test 2
