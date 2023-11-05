@@ -178,3 +178,9 @@ Permet d'afficher le nombre de coups utilisés pour remplir la table de Sudoku.
 
 - `compteur` (Entrée) : entier, incrémenté à chaque tour, donnant à la fin le nombre de coups.
 ---
+
+### Si mauvaise lecture du fichier, voici le lien pour y accéder et avoir une meilleure lisiblité
+
+[Lien github](https://github.com/Elvalio/Sudoku)  
+
+_Lire le README_
