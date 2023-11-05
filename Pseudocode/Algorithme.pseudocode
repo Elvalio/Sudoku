@@ -1,3 +1,8 @@
+
+// Fonction principale 
+
+programme Sudoku c'est
+
 // Déclaration des constantes 
 
 constante chaine COLONNE_MIN := 'A';
@@ -11,15 +16,12 @@ constante chaîne EMPLACEMENT_VIDE := '.';
 constante entier REPRE_EMPLACEMENT_VIDE := -1;
 constante entier NBR_ELEMENT := 81;
 
-programme Sudoku c'est
 début
     // Déclaration variables
     jeuEnCours : booléen ;
     emplacementUtil : tableau[TAILLE_SAISIE] de entier ;
     chiffreUser : entier ;
     entier compteur := 0 ;
-    
-
 
     // Déclaration et initialization du tableau
     tableauGrille : tableau[RANGEE_MAX] de entier;
@@ -43,7 +45,4 @@ début
 
     afficherComptage(entE compteur)
 
-    
 fin
-
-
