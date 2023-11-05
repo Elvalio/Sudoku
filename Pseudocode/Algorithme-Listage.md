@@ -1,8 +1,5 @@
-Algorithme
-===
 
 ```
-
 // Fonction principale 
 
 programme Sudoku c'est
