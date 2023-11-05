@@ -7,6 +7,7 @@ programme Sudoku c'est
 // Procédures
 procédure afficherRegles();
 procédure afficherGrille(entE tableauGrille : tableau[] de entier; );
+procédure bloquerGrille(entE tableauGrille : tableau[] de entier );
 procédure entreeSaisie(entE listeEmplacementBloque : tableau[] de entier , sortE emplacementUtil : tableau[] de entier , sortE chiffreUser : entier );
 procédure modifieGrille(entE emplacementUtil : tableau[] de entier , entE chiffreUser : entier , entE/sortE tableauGrille : tableau[] de entier);
 procédure verifierGrille(entE tableauGrille : tableau[] de entier);
