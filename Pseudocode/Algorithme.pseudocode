@@ -7,67 +7,38 @@ constante entier RANGEE_MIN := 1;
 constante entier RANGEE_MAX := 9;
 constante entier CHAR_RANGEE := 25;
 constante entier TAILLE_SAISIE := 2;
-constante chaîne EMPLACEMENT_VIDEO := '.';
+constante chaîne EMPLACEMENT_VIDE := '.';
+constante entier REPRE_EMPLACEMENT_VIDE := -1;
+constante entier NBR_ELEMENT := 81;
 
 programme Sudoku c'est
 début
-    booléen jeuEnCours;
-    afficherBienvenue();
+    // Déclaration variables
+    jeuEnCours : booléen ;
+    emplacementUtil : tableau[TAILLE_SAISIE] de entier ;
+    chiffreUser : entier ;
+
+
+    // Déclaration et initialization du tableau
+    tableauGrille : tableau[RANGEE_MAX] de entier;
+    tableauGrille := creerGrille(entE fichierGrille);
+
     afficherRegles();
+
+    // Déclaration et initialisation des emplacement vérouillés
+    listeEmplacementBloque : tableau[NBR_ELEMENT] de entier
+    listeEmplacementBloque := bloquerGrille(entE tableauGrille)
+
+    // Lance le jeu
     jeuEnCours := vrai;
     tant que (jeuEnCours) faire
-        afficherGrille();
-        entreeSaisie();
+        afficherGrille(entE tableauGrille);
+        entreeSaisie(sortE );
+        modifieGrille(entE/sortE tableauGrille)
     finfaire
 fin
 
-procédure afficherBienvenue() c'est
-début
-    écrireEcran("Texte de bienvenue");
-fin
-
-procédure afficherRegles() c'est
-début
-    écrireEcran("Contenu des règles");
-fin
-
-fonction entreeSaisie(sortF tableauSaisiePosition :tableau[2] de entier ;) délivre tableau c'est
-début
-    
-    tableauSaisiePosition : tableau[2] de entier;
-    entreeSaisieColonne();
-    entreeSaisieRangee();
-    retourne tableauSaisiePosition
-fin
-
-fonction entreeSaisieColonne() délivre caratère c'est
-début
-    
-    retourne nom_variable
-fin
-
-fonction entreeSaisieRangee() délivre entier c'est
-début
-    
-    retourne nom_variable
-fin
-    
-fonction creerTableauVide(sortF tableauSaisiePosition :tableau[2] de entier ;) délivre tableau c'est
-début
-    
 
 
-
-    tableauVide : tableau[] de entier;
-    entreeSaisieColonne();
-    entreeSaisieRangee();
-    retourne tableauVide
-
-fin
-
-
-
-
-fin
 //comentaire test
 //commentaire test 2
