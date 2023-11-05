@@ -65,8 +65,8 @@ début
 fin
 ```
 ---
-Listage Procédure/Fonctions
-===
+# Listage Procédure/Fonctions
+
 
 **Procédure :** _afficherRegles_
 
