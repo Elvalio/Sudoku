@@ -1,3 +1,4 @@
+# Sudoku - Algorithme
 
 ```
 // Fonction principale 
