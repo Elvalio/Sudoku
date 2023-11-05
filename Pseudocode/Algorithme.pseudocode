@@ -3,6 +3,21 @@
 
 programme Sudoku c'est
 
+
+// Procédures
+procédure afficherRegles();
+procédure afficherGrille(entE tableauGrille);
+procédure entreeSaisie(entE listeEmplacementBloque , sortE emplacementUtil , sortE chiffreUser);
+procédure modifieGrille(entE emplacementUtil , entE chiffreUser , entE/sortE tableauGrille);
+procédure verifierGrille(entE tableauGrille);
+procédure afficherComptage(entE compteur);
+
+
+// Fonctions
+fonction creerGrille(entE fichierGrille);
+fonction bloquerGrille(entE tableauGrille),
+
+
 // Déclaration des constantes 
 
 constante chaine COLONNE_MIN := 'A';
@@ -21,25 +36,22 @@ début
     jeuEnCours : booléen ;
     emplacementUtil : tableau[TAILLE_SAISIE] de entier ;
     chiffreUser : entier ;
+    tableauGrille : tableau[RANGEE_MAX] de entier;
+    listeEmplacementBloque : tableau[NBR_ELEMENT] de entier
     entier compteur := 0 ;
 
-    // Déclaration et initialization du tableau
-    tableauGrille : tableau[RANGEE_MAX] de entier;
+    // Initialisation variables
+    jeuEnCours := vrai;
     tableauGrille := creerGrille(entE fichierGrille);
+    listeEmplacementBloque := bloquerGrille(entE tableauGrille)
 
     afficherRegles();
 
-    // Déclaration et initialisation des emplacement vérouillés
-    listeEmplacementBloque : tableau[NBR_ELEMENT] de entier
-    listeEmplacementBloque := bloquerGrille(entE tableauGrille)
-
-    // Lance le jeu
-    jeuEnCours := vrai;
     tant que (jeuEnCours) faire
         afficherGrille(entE tableauGrille);
         entreeSaisie(entE listeEmplacementBloque , sortE emplacementUtil , sortE chiffreUser);
-        modifieGrille(entE/sortE tableauGrille)
-        jeuEnCours := (entE tableauGrille);
+        modifieGrille(entE emplacementUtil , entE chiffreUser , entE/sortE tableauGrille)
+        jeuEnCours := verifierGrille(entE tableauGrille);
         compteur = compteur + 1 ;
     finfaire
 

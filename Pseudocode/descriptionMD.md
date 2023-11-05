@@ -62,6 +62,10 @@ Fait les vérifications nécessaires :
 
 **Paramètres:**
 
+- `listeEmplacementBloque` (Entrée) : tableau , liste des emplacement natifs qui ne peuvent pas changer.
+
+**Retourne:**
+
 - `emplacementUtil` (Sortie) : tableau, liste contenant l'emplacement que l'utilisateur veut modifier.
 - `chiffreUser` (Sortie) : entier, chiffre que l'utilisateur veut insérer.
 
@@ -70,10 +74,13 @@ Fait les vérifications nécessaires :
 **Procédure :** _modifieGrille_
 
 Prend le tableau actuel et le modifie avec la demande de l'utilisateur.
+Remplace si nécessaire.
 
 **Paramètres:**
 
-- `tableauGrille` (Entrée) : tableau, liste contenant tous les chiffres de la table de sudoku avec tous les emplacements vides représentés par des -1.
+- `emplacementUtil` (Sortie) : tableau, liste contenant l'emplacement que l'utilisateur veut modifier.
+- `chiffreUser` (Sortie) : entier, chiffre que l'utilisateur veut insérer.
+- `tableauGrille` (Entrée) : tableau, la liste donnée en paramètres mais modifiée.
 
 **Retourne:**
 
