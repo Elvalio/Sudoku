@@ -1,6 +1,4 @@
-# SudokuAlgorithme
-===
-
+# Sudoku - Algorithme
 ```
 
 // Fonction principale 
