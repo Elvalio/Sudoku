@@ -1,0 +1,104 @@
+**Procédure :** _afficherRegles_
+
+Affiche les règles du jeu EnCours.
+
+**Paramètres:**
+
+Aucun
+
+---
+
+**Fonction :** _creerGrille_
+
+Crée une double liste des chiffres provenant d'un fichier contenant les chiffres de la grille du Sudoku.
+Le fichier sera choisi aléatoirement parmi différents fichiers.
+Tous les vides seront représentés par un -1.
+
+**Paramètres:**
+
+- `fichierGrille` (Entrée) : fichier de base pour créer une table de Sudoku.
+
+**Résultat:**
+
+Double tableau d'entiers.
+
+---
+
+**Fonction :** _bloquerGrille_
+
+Crée une liste contenant les emplacements, sous forme de sous-liste ((a,b)(c,d)), des chiffres déjà présents afin de ne pas modifier la liste de base.
+
+**Paramètres:**
+
+- `tableauGrille` (Entrée) : tableau, liste contenant tous les chiffres de la table de sudoku avec tous les emplacements vides représentés par des -1.
+
+**Résultat:**
+
+Tableau d'entiers.
+
+---
+
+**Procédure :** _afficherGrille_
+
+Affiche de manière plus lisible, avec les chiffres pour les rangées et les lettres pour les colonnes, ainsi que les traits de séparation.
+Les emplacements vides (ou -1) seront représentés par des '.'.
+
+**Paramètres:**
+
+- `tableauGrille` (Entrée) : tableau, liste contenant tous les chiffres de la table de sudoku avec tous les emplacements vides représentés par des -1.
+
+---
+
+**Procédure :** _entreeSaisie_
+
+Demande à l'utilisateur de rentrer l'emplacement à modifier sous forme (<RANGEE> <espace> <COLONNE>).
+Fait les vérifications nécessaires :
+- Si l'emplacement existe.
+- Si l'emplacement est déjà occupé, propose de remplacer ou d'annuler.
+- Si l'emplacement est hors de la limite de la grille.
+- Si la saisie est correcte (entre 1 et 9).
+- Si le chiffre saisi est déjà dans la case (3 par 3).
+- Si le chiffre saisi est déjà dans la rangée/colonne.
+
+**Paramètres:**
+
+- `emplacementUtil` (Sortie) : tableau, liste contenant l'emplacement que l'utilisateur veut modifier.
+- `chiffreUser` (Sortie) : entier, chiffre que l'utilisateur veut insérer.
+
+---
+
+**Procédure :** _modifieGrille_
+
+Prend le tableau actuel et le modifie avec la demande de l'utilisateur.
+
+**Paramètres:**
+
+- `tableauGrille` (Entrée) : tableau, liste contenant tous les chiffres de la table de sudoku avec tous les emplacements vides représentés par des -1.
+
+**Retourne:**
+
+- `tableauGrille` (Entrée) : tableau, la liste donnée en paramètres mais modifiée.
+
+---
+
+**Procédure :** _verifieGrille_
+
+Vérifie le tableau s'il est complet et retourne en conséquence si la partie continue.
+
+**Paramètres:**
+
+- `tableauGrille` (Entrée) : tableau, liste contenant tous les chiffres de la table de sudoku avec tous les emplacements vides représentés par des -1.
+
+**Retourne:**
+
+Booléen, vrai pour continuer la partie, faux sinon.
+
+---
+
+**Procédure :** _afficherComptage_
+
+Permet d'afficher le nombre de coups utilisés pour remplir la table de Sudoku.
+
+**Paramètres:**
+
+- `compteur` (Entrée) : entier, incrémenté à chaque tour, donnant à la fin le nombre de coups.

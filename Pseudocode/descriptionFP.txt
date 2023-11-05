@@ -41,11 +41,13 @@ tableauGrille (Entrée) : tableau , liste contentant tout les chiffres de la tab
 
 procédure entreeSaisie
 Demande à l'utilisateur de rentrer l'emplacement à modifier sous forme (<RANGEE> <espace> <COLONNE>)
-Fais les vérifications nécessaires comme :
+Fais les vérifications nécessaires :
     - Si l'emplacement existe 
     - Si l'emplacement est déjà occupé, propose de remplacer ou d'annuler 
     - Si l'emplacement est hors de la limite de la grille
     - Si la saisie est correcte (entre 1 et 9)
+    - Si le chiffre saisi est déjà dans la case (3 par 3)
+    - Si le chiffre saisi est déjà dans la rangée/colonne
 
 paramètres 
 emplacementUtil (Sortie) : tableau , liste contenant l'emplacement que l'utilisateur veux modifier.
@@ -53,11 +55,32 @@ chiffreUser (Sortie) : entier , chiffre que l'utilisateur veux insérer.
 
 ----------------------------------------------------------------
 
-fonction modifieGrille
+procédure modifieGrille
 Prend le tableau actuel et le modifie avec la demande de l'utilisateur
 
 paramètres
 tableauGrille (Entrée) : tableau , liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
 
 retourne
-tableauGrille (Entrée) : tableau , la liste donnée en paramètress mais modifiée.
+tableauGrille (Entrée) : tableau , la liste donnée en paramètres mais modifiée.
+
+----------------------------------------------------------------
+
+procédure verifieGrille 
+Vérifie le tableau si il est complet et retourne en conséquence si la partie continue.
+
+paramètres
+tableauGrille (Entrée) : tableau , liste contentant tout les chiffres de la table de sudoku avec tout les emplacements vide représentés par des -1.
+
+retourne
+booléenne , vrai pour continuer la partie , faux sinon.
+
+----------------------------------------------------------------
+
+procédure afficherComptage
+Permet d'afficher le nombre de coup utilisé pour remplir la table de Sudoku.
+
+paramètres
+compteur (Entrée) : entier , incrémenté à chaque tour, donne à la fin le nombre de coup.
+
+

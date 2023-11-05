@@ -17,6 +17,8 @@ début
     jeuEnCours : booléen ;
     emplacementUtil : tableau[TAILLE_SAISIE] de entier ;
     chiffreUser : entier ;
+    entier compteur := 0 ;
+    
 
 
     // Déclaration et initialization du tableau
@@ -33,9 +35,15 @@ début
     jeuEnCours := vrai;
     tant que (jeuEnCours) faire
         afficherGrille(entE tableauGrille);
-        entreeSaisie(sortE emplacementUtil , sortE chiffreUser);
+        entreeSaisie(entE listeEmplacementBloque , sortE emplacementUtil , sortE chiffreUser);
         modifieGrille(entE/sortE tableauGrille)
+        jeuEnCours := (entE tableauGrille);
+        compteur = compteur + 1 ;
     finfaire
+
+    afficherComptage(entE compteur)
+
+    
 fin
 
 
