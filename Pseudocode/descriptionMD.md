@@ -1,3 +1,6 @@
+Listage Procédure/Fonctions
+===
+
 **Procédure :** _afficherRegles_
 
 Affiche les règles du jeu EnCours.
@@ -109,6 +112,10 @@ Permet d'afficher le nombre de coups utilisés pour remplir la table de Sudoku.
 **Paramètres:**
 
 - `compteur` (Entrée) : entier, incrémenté à chaque tour, donnant à la fin le nombre de coups.
+
+---
+Algorithme
+===
 
 ```
 
