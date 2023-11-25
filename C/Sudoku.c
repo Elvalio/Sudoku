@@ -3,6 +3,8 @@
 #define TAILLE 9
 
 // Constantes
+const int CHIFFRE_MAX = 9 ;
+const int CHIFFRE_MIN = 1 ;
 
 // Typedef
 
@@ -15,7 +17,6 @@ typedef int tGrille[TAILLE][TAILLE];
 
 int main (){
 
-    afficherGrille();
 
     return EXIT_SUCCESS;
 }
@@ -39,12 +40,46 @@ void chargerGrille(tGrille g){
     
 }
 
-void afficherGrille(){
+void afficherGrille(tGrille g){
+    int compteur = 1 ;
+    int rangeeAffichage ;
+    
+    printf("\n");
+    printf("    1 2 3   4 5 6   7 8 9 \n");
+    printf("  +-------+-------+-------+ \n");
+    for (int rangee = 0 ; rangee < TAILLE ; rangee++)
+    {
+        rangeeAffichage = rangee + 1 ;
+        if ((rangee % 3) == 0 )
+        {
+            printf("  +-------+-------+-------+ \n");
+        }
+        printf("%d  |" , rangeeAffichage);
+        for (int emplacement = 0 ; emplacement < TAILLE ; emplacement++)
+        {
+            if ((compteur % 3) == 0 )
+            {
+                if (g[rangee][emplacement] >= CHIFFRE_MIN && g[rangee][emplacement] <= CHIFFRE_MAX )
+                {
+                    printf(" %d |", g[rangee][emplacement]);
+                }
+                else
+                {
+                    printf(" . |");
+                }
+            }
+            if (g[rangee][emplacement] >= CHIFFRE_MIN && g[rangee][emplacement] <= CHIFFRE_MAX )
+            {
+                printf(" %d", g[rangee][emplacement]);
+            }
+            else
+            {
+                printf(" .");
+            }
+            compteur++ ;
 
-    printf("     1 2 3   4 5 6   7 8 9");
-    printf("   +-------+-------+-------+ ");
-    printf("1  | 9 . . | . . . | . . . |");
-
+        }
+    }
 
 }
 
