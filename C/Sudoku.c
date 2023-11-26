@@ -29,6 +29,7 @@ int main (){
 
     tGrille grille1 ;
     int numLigne, numColonne, valeur, grillePleine ;
+    int grillePleine = 0 ;
 
     chargerGrille(grille1);
     while (grillePleine == 0)
@@ -168,7 +169,7 @@ int possible(tGrille g, int colonne, int ligne, int valeur) {
     for (int indiceLigne = 0; indiceLigne < TAILLE; indiceLigne++) {
         if (g[indiceLigne][colonne] == valeur) {
             printf("Erreur : La valeur ne peut pas être inséré dans cet emplacement\n");
-            printf("-> Valeur déjà dans la colonne à l'emplacement %d %d\n",indiceLigne + 1 , colonne + 1);
+            printf("-> Valeur déjà dans la colonne à l'emplacement %d %d \n",indiceLigne + 1 , colonne + 1);
             return 0;
         }
     }
@@ -181,7 +182,7 @@ int possible(tGrille g, int colonne, int ligne, int valeur) {
             if (g[debutBlocLigne + indiceLigneBloc][debutBlocColonne + indiceColonneBloc] == valeur) {
                 printf("Erreur : La valeur ne peut pas être inséré dans cet emplacement\n");
                 printf("-> Valeur déjà dans le bloc");
-                printf("-> Valeur déjà dans le bloc à l'emplacement %d %d\n",(debutBlocLigne + indiceLigneBloc) + 1, (debutBlocColonne + indiceColonneBloc) + 1 );
+                printf("-> Valeur déjà dans le bloc à l'emplacement %d %d \n",(debutBlocLigne + indiceLigneBloc) + 1, (debutBlocColonne + indiceColonneBloc) + 1 );
                 return 0;
             }
         }
