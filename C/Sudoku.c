@@ -6,12 +6,14 @@
 #define TAILLE N * N
 
 // Constantes
+
 const int CHIFFRE_MAX = 9 ;
 const int CHIFFRE_MIN = 1 ;
 const int CHIFFRE_VIDE = 0 ;
 
 // Typedef
-typedef int tGrille[TAILLE][TAILLE]; 
+
+typedef int tGrille[TAILLE][TAILLE];
 
 // Prototype / Entête
 
@@ -24,6 +26,7 @@ int possible(tGrille g, int colonne, int ligne, int valeur);
 // Main
 
 int main (){
+
     tGrille grille1 ;
     int numLigne, numColonne, valeur, grillePleine ;
 
@@ -52,6 +55,7 @@ int main (){
         }
         
     }
+    
     afficherGrille(grille1);
     printf("Grille pleine, fin de partie \n");
 
@@ -70,6 +74,7 @@ void chargerGrille(tGrille g){
     f = fopen(nomFichier, "rb");
     if (f==NULL){
         printf("\n ERREUR sur le fichier %s\n", nomFichier);
+        exit(EXIT_FAILURE);
     } else {
         fread(g, sizeof(int), TAILLE*TAILLE, f);
         fclose(f);
@@ -126,7 +131,7 @@ void saisir(int *valeur)
     
     do
     {
-        scanf("%s", saisieUtilisateur);
+        scanf("%s", saisieUtilisateur);  
         if (sscanf(saisieUtilisateur, "%d", &saisieUtilisateurEntiere) != 0)
         {
             if ((saisieUtilisateurEntiere >= CHIFFRE_MIN) && (saisieUtilisateurEntiere <= TAILLE))
